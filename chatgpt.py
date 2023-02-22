@@ -30,7 +30,7 @@ def get_authorization():
     url = "https://chat.openai.com/api/auth/session"
     r = requests.get(url, headers=headers)
     authorization = r.json()["accessToken"]
-    return authorization
+    return "Bearer "+authorization
 
 headers["authorization"] = get_authorization()
 
